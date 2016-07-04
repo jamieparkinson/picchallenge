@@ -1,4 +1,13 @@
-PiC Challenges
-==============
+PiC Full Stack Challenge
+========================
 
-These are my responses to the PiC challenges - one for **full-stack development** in the `app` directory and one for **data science** in the `data` directory.
+This is a rough outline of the approach taken in completing the full stack challenge.
+
+## Deciding on a framework
+
+This is something I need to do fast! So it's probably best to stick with technologies I know. I also know I'll be using **D3.js** for data visualisation, so there's a good argument for sticking to JavaScript. Both of these reasons lead me to exclude **Django**, despite its usefulness and my experience with Python.
+
+Whilst in some ways it might be easiest to do everything client-side with purely D3 (as it has great facilities for loading external resources), I think a scalable approach that will work well with the large amounts of data available, and will also show that I'm comfortable with true full-stack development, would be to use **MEAN**: *M*ongoDB, *E*xpress.js, *A*ngular.js and *N*ode.js.
+
+I will host on Google's Cloud Platform as my AWS Free Tier expired last year...
+

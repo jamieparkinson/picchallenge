@@ -1,0 +1,354 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass tufte-handout
+\begin_preamble
+\date{}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+Biases and Metrics in the Recruitment Process
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1.5cm
+\end_inset
+
+Reducing bias towards disadvantaged and minority groups in the recruitment
+ process is key to building more a more diverse and fairer business.
+ We will look at potential biases in the graduate scheme recruitment process
+ at Company X.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\shape italic
+\size largest
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\shape italic
+\size largest
+On first inspection, the recruitment process seems fair:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Graphics
+	filename minoritiesAlluvial.png
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1.2cm
+\end_inset
+
+Whilst one can see in the plot
+\shape italic
+\size largest
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This plot, known as an alluvial or Sankey plot, shows changes over the recruitme
+nt process in the relative percentage of applicants, separated by gender,
+ sexual orientation, white/non-white ethnicity and, finally, by PiC's advantaged
+/disadvantaged background metric (here separated simply into 
+\begin_inset Quotes eld
+\end_inset
+
+less deprived
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+deprived
+\begin_inset Quotes erd
+\end_inset
+
+ where the metric is less than or greater than 50, respectively.
+\end_layout
+
+\end_inset
+
+
+\shape default
+\size default
+ that there is some change in the relative percentages of applicants as
+ the recruitment process progresses, there is nothing clearly biased here.
+ We have excluded applications that were withdrawn.
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\shape italic
+\size largest
+Looking further at ethnicities is more interesting:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length -1cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename ethnicityAlluvial.png
+	width 85page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1.1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see that applicants from mixed ethnicity background perform 
+\emph on
+disproportionately well.
+ 
+\emph default
+No black applicants make it to the offer stage but so few apply that we
+ can't claim that this is significant.
+\end_layout
+
+\begin_layout Section
+Taking a Closer Look
+\end_layout
+
+\begin_layout Standard
+We've looked at how applicants proceed through the recruitment process.
+ What turns out to be more interesting is looking at how likely applicants
+ are to drop out.
+\end_layout
+
+\begin_layout Quotation
+
+\shape italic
+\size large
+Is the recruitment process unpleasant or intimidating for some minorities?
+\end_layout
+
+\begin_layout Standard
+This is an important question to address.
+ The chart overleaf shows the percentages of dropouts from each of the minority
+ groups above.
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hspace{}
+\length -0.5cm
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename dropouts.png
+	lyxscale 10
+	width 75page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+There is a clear difference at first sight:
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+\size larger
+Candidates from less disadvantaged backgrounds are more likely to withdraw
+ from the application process.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Actually, there is a significant difference for gender too.
+ An analysis of the data
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The analysis used was so-called 
+\series bold
+p-testing
+\series default
+, which allows us to see how likely our results are to have happened by
+ chance, based on the assumption that there is 
+\begin_inset Quotes eld
+\end_inset
+
+should be
+\begin_inset Quotes erd
+\end_inset
+
+ no underlying bias.
+\end_layout
+
+\end_inset
+
+ tells us that:
+\end_layout
+
+\begin_layout Itemize
+
+\size large
+There is a 
+\series bold
+\size largest
+3% 
+\series default
+\size large
+chance that the difference between candidates from disadvantaged and less
+ disadvantaged backgrounds is a statistical error.
+\end_layout
+
+\begin_layout Itemize
+
+\size large
+There is a 
+\series bold
+\size largest
+less than 1 in 4
+\series default
+\size large
+ chance that the increased likelihood of women dropping out is a statistical
+ error.
+\end_layout
+
+\begin_layout Section
+How Else Can We Help?
+\end_layout
+
+\begin_layout Standard
+In addition to analysing data to look at bias, PiC can offer extra help
+ in the recruitment process.
+\end_layout
+
+\begin_layout Standard
+Whilst our scoring system looks only at a candidate's performance in the
+ context of their background and places of education, a naive analysis shows
+ that 
+\end_layout
+
+\end_body
+\end_document

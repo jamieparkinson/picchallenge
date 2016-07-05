@@ -201,3 +201,24 @@ pvals <- function(allData, category) {
   p = 2*pnorm(-abs(z))
   return(p)
 }
+
+picPrediction <- function(inputData, measure = "picScore") {
+  nonWithdrawn = inputData[ ! inputData$stage %in% c("Withdrawn", "POST"), ] # Get rid of withdrawn applications and those still in process
+  nonWithdrawn$stage[nonWithdrawn$stage == "Considered for Other Opportunities" ] <- "Accepted" # Merge acceptances
+
+  plotDat = data.frame(stage = nonWithdrawn$stage, score = nonWithdrawn[,measure])
+  plotDat$stage = droplevels(plotDat$stage)
+  plotDat$stage <- factor(plotDat$stage, levels = c(stageNamesChron[-1], "Accepted"))
+  #levels(plotDat$stage) <- c(stageNamesChron[-1], "Accepted")
+  
+  return(
+          ggplot(plotDat, aes(x = stage, y = score, group = 1)) +
+            geom_jitter(width = 0.8) +
+            theme_minimal() +
+            theme(axis.title.x = element_text(size = 18, face = "bold", margin = margin(20, 0, 0, 0)),
+                  axis.text.x = element_text(size = 13),
+                  axis.title.y = element_text(size = 20, face = "bold", margin = margin(0, 20, 0, 0))) +
+            geom_smooth(method = "lm") +
+            ylab("PiC Achievement Score") +
+            xlab("Stage Reached")        )
+}

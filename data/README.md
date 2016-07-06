@@ -15,6 +15,20 @@ This is a rough outline of the methodology and approach used in completing the d
 
 ---
 
+## Files
+
+The relevant files in this directory are:
+
+- `scripts.R` and `import.R` generated all of the plots
+- `minireport.lyx` and `minireport.pdf` are the report word processing files and pdf, respectively
+- `raw.csv` and `raw-trimmed.csv` are the input data files
+- `*.xcf` files are GIMP files for the alluvial plots (I edited them slightly)
+- Everything else is not really relevant
+
+LyX is a slightly strange word processing tool that I like - it's a sort of quasi-WYSIWYG editor for LaTeX-like documents.
+
+---
+
 # Postmortem
 
 This took quite a long time - I spent a lot of time just playing with the data, and also getting the plots just how I wanted. I'm really pleased with the alluvial plots.

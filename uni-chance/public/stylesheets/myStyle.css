@@ -1,0 +1,84 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+div#logo > img {
+	display: block;
+	margin: 7.5rem auto 1rem auto;
+}
+
+div#content {
+	width: 900px;
+	margin: 0 auto;
+	text-align: center
+}
+
+.question {
+	display: inline-block;
+	margin: 12px 10px;
+	float: left;
+	font-weight: bold;
+}
+
+form#datForm {
+	display: block;
+	width: 80%;
+	margin: 0 auto;
+	font-size: 1.2em;
+}
+
+form#datForm > input,select {
+	float: right;
+	margin: 10px 0;
+	border-radius: 5px;
+	box-shadow: none;
+	display: block;
+	font-size: 1.01em;
+	padding: 5px 10px;
+	background-color: white;
+}
+
+button#goBtn {
+	background-color:#3498db;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	border-radius:12px;
+	border:1px solid #8DB9D6;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:1.2em;
+	padding:6px 29px;
+	text-decoration:none;
+	margin: 0 auto;
+	display: block;
+	clear: both;
+}
+
+.grade-container {
+	clear: both;
+	float: none;
+}
+
+.gradeSel:last-child {
+	margin-bottom: 22px;
+}
+
+.gradeSel {
+	float: none;
+	margin: 8px auto;
+	clear: both;
+}
+
+#autocomplete-field {
+	width: 45%;
+	font-size: 1.01em;
+	float: right;
+}
+
+.overall-percentage {
+	font-size: 4.5em;
+}
+
+#results-container {
+	margin: 30px auto;
+	padding: 2em;
+}

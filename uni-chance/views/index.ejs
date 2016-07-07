@@ -1,11 +1,108 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+<title>Uni Chances</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<script type="text/javascript" src="/javascripts/autocomplete.js"></script>
+<script type="text/javascript" src="/javascripts/angular-smooth-scroll.js"></script>
+<script src="/javascripts/angularApp.js"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/stylesheets/myStyle.css">
+<link rel="stylesheet" href="/stylesheets/autocomplete.css">
+
+</head>
+<body ng-app="uniChance" ng-controller="mainController">
+
+<div id="content">
+	<div id="logo">
+		<img src="/images/mortarboard.svg" width="200px"/>
+	</div>
+
+	<form id="datForm" ng-init="loadData()">
+		<label for="subject" class="question">What subject group do you want to study?</label>
+		<select id="subject" style="width: 36%" ng-model="subject">
+			<option ng-repeat="sub in subjects">{{sub}}</option>
+		</select>
+		<br />
+		<label for="uni" class="question" style="margin-bottom: 33px; margin-top: 23px">Where do you want to study?</label>
+		<autocomplete ng-model="uni" data="unis" attr-id="autocomplete-field"></autocomplete>
+		<br />
+
+		<span class="question" style="width: 100%; margin: 15px auto; clear: both">What were your best 3 A-Level grades?</span>
+		<div id="grade-container">
+			<select class="gradeSel" ng-model="grade1" ng-options="grade.val as grade.name for grade in gradeTypes">
+			</select>
+			<select class="gradeSel" ng-model="grade2" ng-options="grade.val as grade.name for grade in gradeTypes">
+			</select>
+			<select class="gradeSel" ng-model="grade3" ng-options="grade.val as grade.name for grade in gradeTypes">
+			</select>
+		</div>
+
+		<button type="submit" id="goBtn" scroll-to="results-container" ng-click="doCalc()">Go!</button>
+	</form>
+
+	<div id="results-container">
+		<div class="panel panel-primary" style="display: inline-block;">
+			<div class="panel-heading">
+				<h3 class="panel-title">Estimated Likelihood of Success</h3>
+			</div>
+			<div class="panel-body overall-percentage">
+				{{combinedStat | number : 0}}%
+			</div>
+		</div>
+		<br/>
+		<div class="panel panel-success" style="display: inline-block; margin: 20px;">
+			<div class="panel-heading">
+				<h2 class="panel-title">Percentage of Successful Applicants<br/>With Your Grades</h2>
+			</div>
+			<div class="panel-body overall-percentage">
+				{{scoreStat | number : 0}}%
+			</div>
+		</div>
+		<div class="panel panel-info" style="display: inline-block; margin: 20px;">
+			<div class="panel-heading">
+				<h3 class="panel-title">Percentage of Successful Applicants<br />For Your Course</h3>
+			</div>
+			<div class="panel-body overall-percentage">
+				{{subjStat | number : 0}}%
+			</div>
+		</div>
+		<br/>
+		<div class="panel panel-default" style="display:inline-block; margin: 20px; text-align: left;">
+			<div class="panel-heading">
+				<h3 class="panel-title">Similar Universities</h3>
+			</div>
+			<div class="panel-body">
+			Unis that are nearby on the Guardian league table.
+			</div>
+			<table class="table">
+				<tr>
+					<th>University</th>
+					<th>Estimated Success Likelihood</th>
+				</tr>
+				<tr ng-repeat="uni in similarUnis">
+					<td>{{uni.name}}</td>
+					<td>{{uni.stat | number : 0}}%</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+</div>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
 </html>

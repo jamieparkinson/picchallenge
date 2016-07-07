@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Uni Chances</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
+<script src="app.js"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body ng-app="uniChance" ng-controller="mainController">
+
+<div id="content">
+	<div id="logo">
+		<img src="mortarboard.svg" width="200px"/>
+	</div>
+
+	<form ng-submit="doCalc()" id="datForm">
+		<label for="subject" class="question">What subject group do you want to study?</label>
+		<select id="subject" style="width: 36%" ng-model="subject">
+			<option ng-repeat="subject in subjects" value="subject">{{subject}}</option>
+		</select>
+		<br />
+		<label for="uni" class="question" style="margin-bottom: 33px">Where do you want to study?</label>
+		<input type="text" ng-model="uni" id="uni" size="17"/>	
+		<br />
+
+		<span class="question" style="width: 100%; margin: 15px auto; clear: both">What were your best 3 A-Level grades?</span>
+		<div id="grade-container">
+			<select class="gradeSel" ng-model="grade1" ng-options="grade.val as grade.name for grade in gradeTypes">
+			</select>
+			<select class="gradeSel" ng-model="grade2" ng-options="grade.val as grade.name for grade in gradeTypes">
+			</select>
+			<select class="gradeSel" ng-model="grade3" ng-options="grade.val as grade.name for grade in gradeTypes">
+			</select>
+		</div>
+
+		<button type="submit" id="goBtn">Go!</button>
+	</form>
+</div>
+
+</body>
+</html>

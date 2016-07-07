@@ -22,6 +22,34 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Load database things
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost/unichance');
+
+// Give db to routers
+app.use(function(req, res, next) {
+  req.db = db;
+  next();
+});
+
+app.use('/points/applicants', function(req, res, next) {
+  req.collection = db.get('pointsApplications');
+  next();
+});
+app.use('/points/acceptances', function(req, res, next) {
+  req.collection = db.get('pointsAccepted');
+  next();
+});
+app.use('/subjects/applicants', function(req, res, next) {
+  req.collection = db.get('subjectApplications');
+  next();
+});
+app.use('/subjects/acceptances', function(req, res, next) {
+  req.collection = db.get('subjectAccepted');
+  next();
+});
+
 app.use('/', routes);
 app.use('/users', users);
 
@@ -55,6 +83,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
